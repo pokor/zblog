@@ -11,10 +11,10 @@ class ListController extends Controller
 {
     public function showList()
     {
-        return view('admin.user.user');
+        return view('admin.user.list');
     }
     public function deleteUser()
     {
-        return view('admin.user.user');
+        return view('admin.user.list');
     }
 }

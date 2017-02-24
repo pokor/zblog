@@ -14,6 +14,6 @@ class ArticleController extends Controller
     }
     public function deleteArticle()
     {
-        return view('admin.article.article');
+        return view('admin.article.list');
     }
 }

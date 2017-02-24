@@ -11,7 +11,7 @@ class ListAddController extends Controller
 {
   public function listAddUser()
   {
-      return view('admin.user.list_add');
+      return view('admin.user.add');
   }
 
 }

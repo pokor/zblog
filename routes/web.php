@@ -40,3 +40,8 @@ Route::group(['prefix'=>'/admin'],function (){
     });
 });
 
+
+Route::get('/',function (){
+    dd(1);
+});
+
