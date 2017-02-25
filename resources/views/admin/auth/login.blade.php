@@ -1,24 +1,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>管理员登录</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="author" content="Prakasam Mathaiyan">
-    <meta name="description" content="">
-
-    <link rel="icon" href="/images/favicon.png" type="image/gif">
-
-    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/plugins/animate-it/animate.min.css">
-
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/style-default.css">
-</head>
-
+@include('admin.comment.head')
 <body class="login2">
-
 <!-- Login Div Start Here -->
 <div class="login animated flipInY" id="logindiv">
     <div class="text-center logo">

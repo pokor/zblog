@@ -37,6 +37,7 @@ Route::group(['prefix'=>'/admin'],function (){
         Route::get('/light','Admin\Home\HomeLightController@homeLight');
         Route::get('/point','Admin\Home\HomePointController@homePoint');
         Route::get('/ring','Admin\Home\HomeRingController@homeRing');
+        Route::get('/guest','Admin\Home\HomeGuestController@homeGuest');
     });
 });
 

@@ -1,14 +1,10 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>文章添加</title>
-</head>
+@include('admin.comment.head')
 <body>
-<div>
+<div class="wrapper  has-footer">
+@include('admin.comment.header')
+@include('admin.comment.aside')
     <div>
         文章标题: <input type="text">
     </div>
@@ -20,6 +16,8 @@
     <div>
         <button type="button">提交</button>
     </div>
+@include('admin.comment.footer')
 </div>
+@include('admin.comment.js')
 </body>
 </html>

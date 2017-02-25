@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class ArticleController extends Controller
 {
     public function articleShow(){
-        return view('admin.article.article');
+        return view('admin.article.list');
     }
     public function deleteArticle()
     {

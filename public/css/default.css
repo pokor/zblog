@@ -881,3 +881,6 @@ span.sh{
 	cursor:pointer;
 	color:#666;
 }
+.guest{
+	border-top: 100px;
+}
