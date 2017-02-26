@@ -10,6 +10,8 @@ Route::group(['prefix'=>'/admin'],function (){
     //登录退出
     Route::get('/login','Admin\Auth\LoginController@showLoginForm');
     Route::get('/logout','Admin\Auth\LogoutController@logout');
+    Route::post('/login','Admin\Auth\LoginController@postLogin');
+    Route::post('/register','Admin\Auth\LoginController@postRegister');
 
     //用户管理路由组
     Route::group(['prefix'=>'/user'],function (){

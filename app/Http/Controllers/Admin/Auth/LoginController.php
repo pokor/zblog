@@ -14,4 +14,13 @@ class LoginController extends Controller
     {
         return view('admin.auth.login');
     }
+    public function postLogin(Request $request)
+    {
+        dd($request->all());
+
+    }
+    public function postRegister(Request $request)
+    {
+        dd($request->all());
+    }
 }
