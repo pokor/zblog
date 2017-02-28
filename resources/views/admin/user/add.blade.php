@@ -10,12 +10,11 @@
         <div class="page-header">
             <h1>表单确认 </h1>
             <ol class="breadcrumb">
-                <li><a href="index.php">主页</a></li>
-                <li><a href="index.php">表格</a></li>
+                <li><a href="/admin/article/list">主页</a></li>
+                <li><a href="/admin/user/list">表格</a></li>
                 <li class="active">注册表</li>
             </ol>
         </div>
-
         <div class="content-wrap">  <!--START: Content Wrap-->
 
             <div class="row">
@@ -27,45 +26,29 @@
                         </div>
                         <div class="panel-body">
 
-                            <form action="#" role="form" id="formvalidationtooltip">
+                            <form action="/admin/user/add" role="form" id="formvalidationtooltip" method="post">
                                 <div class="form-body">
-
+                                    {{--csrc跨域提交--}}
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <label>用户名</label>
-                                        <input type="text" class="form-control validate[required]" name="firstname" id="firstname" placeholder="请输入用户名" data-prompt-position="topLeft">
+                                        <input type="text" class="form-control validate[required]" name="reg_username" id="firstname" placeholder="请输入用户名" data-prompt-position="topLeft">
                                     </div>
-
-
+{{--
                                     <div class="form-group">
                                         <label>邮箱</label>
                                         <input type="text" class="form-control validate[required,custom[email]]" name="email" id="email" placeholder="您常用的邮箱" data-prompt-position="topLeft">
-                                    </div>
-
-
+                                    </div>--}}
 
                                     <div class="form-group">
                                         <label>密码</label>
                                         <input type = "password" name = "txtPassword" id = "txtPassword" class = "form-control validate[required,minSize[6],maxSize[50]]" data-prompt-position="topLeft">
                                     </div>
-
+{{--
                                     <div class="form-group">
                                         <label>确认密码</label>
                                         <input type = "password" name = "txtCPassword" id = "txtCPassword" class = "form-control validate[required,equals[txtPassword]]" data-prompt-position="topLeft">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>只能是字母或者是数字</label>
-                                        <select name="sport" id="sport" class="form-control validate[required]" data-prompt-position="topLeft">
-                                            <option value="">选择运动</option>
-                                            <option value="option1">网球</option>
-                                            <option value="option2">足球</option>
-                                            <option value="option3">桌球</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>请输入验证码</label>
-                                        <input type="text" class="form-control validate[required,custom[onlyLetterNumber]]" name="spacel" id="spacel" placeholder="只能是数字或者字母" data-prompt-position="topLeft">
-                                    </div>
+                                    </div>--}}
 
                                 </div>
 
@@ -82,7 +65,17 @@
             </div>
 
         </div>  <!--END: Content Wrap-->
+        <script>
+            $(document).ready(function () {
+                $("#txtPassword").click(function () {
+                    var name = $("#txtPassword").val();
+                    $.post("/admin/user/add?do="+name,function (data){
+                        console.log(data);
+                    } )
+                })
 
+            })
+        </script>
     </div>  <!-- END: Main Container -->
     @include('admin.comment.footer')
 </div>

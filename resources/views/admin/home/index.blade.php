@@ -70,7 +70,7 @@
                     <h5 class="post-tags">Tags: <span class="tags"><a href="#catalog.asp?tags=%E8%A7%89%E6%82%9F">觉悟</a>&nbsp;&nbsp;<a href="#catalog.asp?tags=%E7%88%B1%E6%83%85">爱情</a>&nbsp;&nbsp;<a href="#catalog.asp?tags=%E4%BA%BA%E7%94%9F">人生</a>&nbsp;&nbsp;</span></h5>
                     <h6 class="post-footer">
                         发布:圈圈 | 分类:如是观 | 评论:8 | 浏览:<span id="spn73"></span>
-                        <script type="text/javascript">LoadViewCount(73)</script> | <a href="#post/73.html">阅读全文 > </a>
+                        <script type="text/javascript">LoadViewCount(73)</script> | <a href="/admin/home/life">阅读全文 > </a>
                     </h6>
                 </div> <div class="post multi-post cate4 auth1">
                     <h4 class="post-date">2015年4月30日</h4>

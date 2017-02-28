@@ -27,20 +27,28 @@
 <!-- Login Div Start Here -->
 <div class="login animated flipInY" id="logindiv">
     <div class="text-center logo">
-        <img src="/images/logo-c.svg" alt="logo">
+       <h3 style="color: #5bc0de">
+           后台登录管理
+       </h3>
     </div>
 
     <form role="form" class="loginForm" method="post" action="/admin/login">
-            {{csrf_field()}}
-        <div class="form-group">
-            <div class="input-icon">
-                <input type="email" class="form-control" name="lgn_email" placeholder="邮箱或用户名">
-            </div>
-        </div>
 
+            {{csrf_field()}}
+            {{-- csrf跨域提交   --}}
         <div class="form-group">
             <div class="input-icon">
-                <input type="password" class="form-control" name="lgn_pwd" placeholder="密码">
+                <input type="text" class="form-control" name="txt_username" placeholder="用户名">
+            </div>
+            <span style="color: red">
+                @if(session('err'))
+                    {{  session('err') }}
+                @endif
+            </span>
+        </div>
+        <div class="form-group">
+            <div class="input-icon">
+                <input type="password" class="form-control" name="txt_password" placeholder="密码">
             </div>
         </div>
 
@@ -53,7 +61,6 @@
                 </div>
             </div>
 
-            <a href="javascript:void(0);" class="pull-right lnkForgot">忘记密码?</a>
         </div>
 
         <div class="clearfix">
@@ -68,39 +75,13 @@
 </div>
 <!-- Login Div Ends Here -->
 
-<!-- Forgot Div Start Here -->
-<div class="login animated flipInY" id="forgotDiv">
-    <div class="text-center logo">
-        <img src="/images/logo-c.svg" alt="logo">
-    </div>
 
-    <form role="form" class="ForgotForm" method="post" action="">
-            {{csrf_field()}}
-        <div class="clearfix">
-            <p>输入你的邮箱重新更改密码.</p>
-        </div>
-
-        <div class="form-group">
-            <div class="input-icon">
-                <input type="email" class="form-control" name="forgot_email" placeholder="email">
-            </div>
-        </div>
-
-        <div class="clearfix">
-            <button type="button" class="btn btn-danger pull-left lnkLogin">返回</button>
-            <button type="submit" class="btn btn-primary pull-right">提交</button>
-        </div>
-
-    </form>
-
-
-</div>
 <!-- Forgot Div End Here -->
 
-<!-- Register Div Start Here -->
+{{--<!-- Register Div Start Here -->
 <div class="login animated flipInY" id="registerDiv">
     <div class="text-center logo">
-        <img src="/images/logo-c.svg" alt="logo">
+        <h3 style="color: #5bc0de">后台登录管理</h3>
     </div>
 
     <form role="form" class="registerForm" method="post" action="/admin/register">
@@ -113,7 +94,7 @@
 
         <div class="form-group">
             <div class="input-icon">
-                <input type="email" class="form-control" name="register_email" placeholder="邮箱">
+                <input type="email" class="form-control" name="register_email" placeholder="用户名">
             </div>
         </div>
 
@@ -135,18 +116,9 @@
         </div>
 
     </form>
+</div>--}}
 
-</div>
-<!-- Register Div End Here -->
 
-<script type="text/javascript" src="/plugins/lib/jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="/plugins/lib/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/plugins/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="/plugins/lib/plugins.js"></script>
 
-<script type="text/javascript" src="/plugins/validation/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/plugins/validation/additional-methods.min.js"></script>
-
-<script type="text/javascript" src="/js/page-login2.js"></script>
 </body>
 </html>

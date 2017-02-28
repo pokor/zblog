@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <title>个人管理</title>
+    <title>后台管理</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="Prakasam Mathaiyan">
     <meta name="description" content="">
@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" type="text/css" href="/plugins/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/plugins/validationEngine/validationEngine.jquery.css">
+    <link rel="stylesheet" type="text/css" href="/plugins/validationEngine/jquery-3.1.1.js">
 
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/style-default.css">

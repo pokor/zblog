@@ -5,14 +5,14 @@
 
             <li class="side-nav-header">导航栏</li>
 
-            <li>
+        {{--    <li>
                 <a href="/admin/user/list">
                     <i class="sli-envelope"></i>
                     <span class="nav-text">消息</span>
                     <span class="badge bg-danger">3</span>
                 </a>
             </li>
-
+--}}
             <li class="has-submenu">
                 <a href="#submenuOne" data-toggle="collapse" aria-expanded="false">
                     <i class="fs-grid-6"></i>
@@ -22,7 +22,6 @@
                     <ul>
                         <li><a href="/admin/article/list">所有文章</a></li>
                         <li><a href="/admin/article/add">写文章</a></li>
-
                         <li><a href="/admin/category/list">分类目录</a></li>
                     </ul>
                 </div>
@@ -49,15 +48,6 @@
 
             </li>
 
-            <li class="milestone">
-                <a href="#">
-                    设计
-                    <small class="pull-right">12/20</small>
-                    <div class="progress progress-striped active">
-                        <div class="progress-bar" style="width: 60%;"></div>
-                    </div>
-                </a>
-            </li>
 
             <li class="milestone">
                 <a href="#">
