@@ -18,11 +18,11 @@ class ListController extends Controller
             return redirect('/admin/login');
         }
         //拼接sql语句
-      $sql = "SELECT *
+     /* $sql = "SELECT *
                 FROM zblog_user 
                 ORDER BY uid DESC 
-        ";
-        $rs = DB::select($sql);
+        ";*/
+        $rs = DB::table("zblog_user")->paginate(5);
 
         return view('admin.user.list',['lists'=>$rs]);
     }
@@ -38,8 +38,9 @@ class ListController extends Controller
         //组织删除语句
         $sql = "DELETE FROM `zblog_user` WHERE `uid` = ? ";
         //执行删除
-       $re = DB::delete($sql,[
-            $id]);
+       DB::delete($sql,[
+            $id
+       ]);
 
        /* if (!$re ==0){
             dd("删除成功");

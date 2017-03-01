@@ -32,7 +32,7 @@
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label>用户名</label>
-                                        <input type="text" class="form-control validate[required]" name="reg_username" id="firstname" placeholder="请输入用户名" data-prompt-position="topLeft">
+                                        <input type="text" class="form-control " name="reg_username" id="userM" placeholder="请输入用户名" data-prompt-position="topLeft">
                                     </div>
 {{--
                                     <div class="form-group">
@@ -42,7 +42,7 @@
 
                                     <div class="form-group">
                                         <label>密码</label>
-                                        <input type = "password" name = "txtPassword" id = "txtPassword" class = "form-control validate[required,minSize[6],maxSize[50]]" data-prompt-position="topLeft">
+                                        <input type = "password" name = "txtPassword" id = "txtPassword" class = "form-control " data-prompt-position="topLeft">
                                     </div>
 {{--
                                     <div class="form-group">
@@ -54,7 +54,7 @@
 
                                 <div class="form-actions fluid">
                                     <div class="col-md-12 text-right">
-                                        <button type="submit" class="btn btn-info">提交</button>
+                                        <button type="submit" class="btn btn-info" id="btn">提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -66,7 +66,7 @@
 
         </div>  <!--END: Content Wrap-->
         <script>
-            $(document).ready(function () {
+         /*   $(document).ready(function () {
                 $("#txtPassword").click(function () {
                     var name = $("#txtPassword").val();
                     $.post("/admin/user/add?do="+name,function (data){
@@ -74,6 +74,25 @@
                     } )
                 })
 
+            })*/
+            $(document).ready(function () {
+                $("#btn").click(function (e) {
+                    var valu = $("#txtPassword").val();
+                    var user  = $("#userM").val();
+                    e.preventDefault();
+
+                    if (user.length<6 || user.length>20){
+                        return alert('你的用户名不正确');
+                    }
+                    if (valu == ''){
+                        return alert('密码不能为空');
+                    }
+                    if (valu.length<6 || valu.length>20 ){
+                        return alert('你输入的小于6位或者大于20位字符');
+                    }
+                    $("#formvalidationtooltip").submit();
+
+                })
             })
         </script>
     </div>  <!-- END: Main Container -->

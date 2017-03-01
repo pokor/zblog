@@ -17,14 +17,24 @@ class ArticleAddController extends Controller
             return redirect('/admin/login');
     }
         $title = $request->input('txt_title');
-        $content = $request->input('content');
-        $sql = "insert into article(`title`,`content`) WHERE (?,?)";
+        $content = $request->input('text');
+        $time = time();
+        $sql = "insert into `article` (`title`,`w_date`,`content`) ";
+        $sql.= " value (?,?,?)";
+
         $re = DB::insert($sql,[
             $title,
-            $content
+            $time,
+            htmlspecialchars($content),
+
         ]);
 
-        return view('admin.article.add');
+        if ($re)
+        {
+
+            return redirect('/admin/article/list')->with('success','文章写入成功');
+        }
+
     }
     public function article()
     {

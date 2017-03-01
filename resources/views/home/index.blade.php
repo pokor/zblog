@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html  xml:lang="zh-CN" lang="zh-CN">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="Content-Language" content="zh-CN" />
-    <meta name="keywords" content="你我网,圈圈说,汉中,汉中圈圈,你我,如是观,心理,感情,youmew" />
-    <meta name="description" content="你我网，缘自圈圈说，记载着圈圈的生活过往，只为留住那份曾经的感动；圈圈，又名小尤，前半生执著于感情，命途多舛，故孑然一身。" />
-    <title>个人主页</title>
-    <link rel="stylesheet" rev="stylesheet" href="/css/style.css" type="text/css" media="screen" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <script src="/js/common.js" type="text/javascript"></script>
-    <script src="/js/c_html_js_add.js" type="text/javascript"></script>
-    <script src="/js/custom.js" type="text/javascript"></script>
-    <link rel="alternate" type="application/rss+xml" href="/css/default.css" title="个人主页 " />
-</head>
+@include('admin.comment.home_index')
 <body class="multi default">
 <div id="divAll">
     <div id="divPage">
         <div id="divMiddle">
             <div id="divTop">
-                <h1 id="BlogTitle"><a href="#"><img src="/images/LOGO.gif" alt="个人主页" onMouseover="shake(this,'onmouseout')" /></a></h1>
+                <h1 id="BlogTitle"><a href="#"><img src="/images/LOGO.gif" alt="个人主页" onMouseover="shake(this,'onmouseout')" /></a>
+                </h1>
                 <!-- <h3 id="BlogSubTitle">www.Youmew.com</h3> -->
             </div>
             <div id="divNavBar">
-                <ul>
-                    <li><a href="/admin/home/index">首页</a></li><li><a href="/admin/home/life" title="感悟生活点滴">大生活</a></li><li><a href="light.blade.php" title="光与影的艺术">光影斑斓</a></li><li><a href="/admin/home/point" title="一切有为法，如梦幻泡影，如露亦如电，应作如是观。">如是观</a></li><li><a href="/admin/home/ring" target="_blank" title="还是以前的圈圈微博！">圈圈说</a></li><li><a href="/admin/home/guest" title="沟通从这里开始">留言本</a></li>
-                </ul>
+                @include('home.partials.menu')
             </div>
             <div id="divMain">
                 <div class="post multi-post cate4 auth1">
@@ -131,12 +118,7 @@
                 <div class="post pagebar"><a href="#"><span class="page first-page">&laquo;</span></a><span class="page now-page">1</span><a href="#catalog.asp?page=2"><span class="page">2</span></a><a href="#catalog.asp?page=3"><span class="page">3</span></a><a href="#catalog.asp?page=4"><span class="page">4</span></a><a href="#catalog.asp?page=5"><span class="page">5</span></a><a href="#catalog.asp?page=6"><span class="page">6</span></a><a href="#catalog.asp?page=7"><span class="page">7</span></a><a href="#catalog.asp?page=7"><span class="page last-page">&raquo;</span></a></div>
             </div>
             <div id="divSidebar">
-                <dl class="function" id="divSearchPanel">
-                    <dt class="function_t">搜索</dt>
-                    <dd class="function_c">
-                        <div><div js="padding:0.5em 0 0.5em 1em;"><form method="post" action="#zb_system/cmd.asp?act=Search"><input type="text" name="edtSearch" id="edtSearch" size="12" /> <input type="submit" value="提交" name="btnPost" id="btnPost" /></form></div></div>
-                    </dd>
-                </dl><dl class="function" id="divTags">
+                <dl class="function" id="divTags">
                     <dt class="function_t">按标签浏览</dt>
                     <dd class="function_c">
                         <ul><li class="tag-name tag-name-size-2"><a href="#catalog.asp?tags=%E8%A7%89%E6%82%9F">觉悟<span class="tag-count"> (18)</span></a></li><li class="tag-name tag-name-size-3"><a href="#catalog.asp?tags=%E4%BA%BA%E7%94%9F">人生<span class="tag-count"> (26)</span></a></li><li class="tag-name tag-name-size-2"><a href="#catalog.asp?tags=%E6%91%84%E5%BD%B1">摄影<span class="tag-count"> (15)</span></a></li><li class="tag-name tag-name-size-2"><a href="#catalog.asp?tags=%E7%88%B1%E6%83%85">爱情<span class="tag-count"> (11)</span></a></li><li class="tag-name tag-name-size-3"><a href="#catalog.asp?tags=%E5%BF%83%E6%83%85">心情<span class="tag-count"> (34)</span></a></li><li class="tag-name tag-name-size-3"><a href="#catalog.asp?tags=%E7%94%9F%E6%B4%BB">生活<span class="tag-count"> (28)</span></a></li><li class="tag-name tag-name-size-1"><a href="#catalog.asp?tags=%E9%9F%B3%E4%B9%90">音乐<span class="tag-count"> (6)</span></a></li><li class="tag-name tag-name-size-0"><a href="#catalog.asp?tags=%E8%A7%84%E5%88%99">规则<span class="tag-count"> (5)</span></a></li><li class="tag-name tag-name-size-0"><a href="#catalog.asp?tags=%E5%A4%95%E9%98%B3">夕阳<span class="tag-count"> (1)</span></a></li><li class="tag-name tag-name-size-0"><a href="#catalog.asp?tags=%E5%AF%82%E5%AF%9E">寂寞<span class="tag-count"> (3)</span></a></li><li class="tag-name tag-name-size-1"><a href="#catalog.asp?tags=%E8%BF%87%E5%BE%80">过往<span class="tag-count"> (8)</span></a></li><li class="tag-name tag-name-size-0"><a href="#catalog.asp?tags=%E8%A5%BF%E4%B9%A1">西乡<span class="tag-count"> (3)</span></a></li><li class="tag-name tag-name-size-1"><a href="#catalog.asp?tags=%E5%9B%9E%E5%BF%86">回忆<span class="tag-count"> (8)</span></a></li><li class="tag-name tag-name-size-0"><a href="#catalog.asp?tags=%E6%97%85%E8%A1%8C">旅行<span class="tag-count"> (1)</span></a></li></ul>

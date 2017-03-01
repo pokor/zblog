@@ -1,4 +1,3 @@
-<script type="text/javascript" src="/plugins/lib/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="/plugins/lib/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/plugins/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="/plugins/lib/plugins.js"></script>

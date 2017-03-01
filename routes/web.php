@@ -28,6 +28,7 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::group(['prefix'=>'/article'],function (){
         //文章列表路由
         Route::get('/list','Admin\Article\ArticleController@articleShow');
+        Route::get('/show','Admin\Article\ArticleController@show');
         //文章文章添加路由
         Route::get('/add','Admin\Article\ArticleAddController@article');
         Route::post('/add','Admin\Article\ArticleAddController@articleAdd');
@@ -41,18 +42,23 @@ Route::group(['prefix'=>'/admin'],function (){
         Route::get('/add','Admin\Category\CategoryAddController@categoryAdd');
         Route::get('/del','Admin\Category\CategoryDeleteController@deleteCategory');
     });
-    Route::group(['prefix'=>'/home'],function (){
-        Route::get('/index','Admin\Home\IndexController@indexHome');
-        Route::get('/life','Admin\Home\HomeArticleController@homeArticle');
-        Route::get('/light','Admin\Home\HomeLightController@homeLight');
-        Route::get('/point','Admin\Home\HomePointController@homePoint');
-        Route::get('/ring','Admin\Home\HomeRingController@homeRing');
-        Route::get('/guest','Admin\Home\HomeGuestController@homeGuest');
-    });
+
 });
 
+/**
+ * 前台
+ */
+Route::get('/','Home\IndexController@indexHome')->name('home');
+Route::get('life','Home\ArticleController@homeArticle')->name('life');
+Route::get('light','Home\LightController@homeLight')->name('light');
+Route::get('point','Home\PointController@homePoint')->name('point');
+Route::get('ring','Home\RingController@homeRing')->name('ring');
+Route::get('guest','Home\GuestController@homeGuest')->name('comment');
 
-Route::get('/',function (){
-    dd(1);
+
+
+
+//用户中心
+Route::group(['prefix'=>'user'],function (){
+       Route::get('/','User\ProfileController@index');
 });
-

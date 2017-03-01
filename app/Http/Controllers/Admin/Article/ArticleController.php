@@ -18,7 +18,7 @@ class ArticleController extends Controller
                 FROM article 
                 ORDER BY id DESC ";
         $rs = DB::select($sql);
-        return view('admin.article.list',['list2'=>$rs]);//今天的任务
+        return view('admin.article.list',['list2'=>$rs]);
     }
     public function deleteArticle(Request $request)
     {
@@ -27,7 +27,21 @@ class ArticleController extends Controller
         DB::delete($sql,[
             $id
         ]);
-        dd();
         return redirect('/admin/article/list')->with('success','删除成功');
+    }
+    public function show(Request $request)
+    {
+
+        if (!session('user_info')){
+            return redirect('/admin/login');
+        }
+        $show = $request->input('Sid');
+
+        $sql = "select * from `article` WHERE `id` = ?";
+        $res = DB::select($sql,[
+            $show
+        ]);
+        return view('admin.article.show',['list3'=>$res]);
+
     }
 }

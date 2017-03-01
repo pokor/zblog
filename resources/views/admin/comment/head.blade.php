@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" type="text/css" href="/plugins/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/plugins/validationEngine/validationEngine.jquery.css">
-    <link rel="stylesheet" type="text/css" href="/plugins/validationEngine/jquery-3.1.1.js">
+    <script type="text/javascript" src="/plugins/lib/jquery-2.2.4.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/style-default.css">

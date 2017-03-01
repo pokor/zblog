@@ -1,18 +1,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="Content-Language" content="zh-CN" />
-    <meta name="keywords" content="你我网,圈圈说,汉中,汉中圈圈,你我,如是观,心理,感情,youmew" />
-    <meta name="description" content="你我网，缘自圈圈说，记载着圈圈的生活过往，只为留住那份曾经的感动；圈圈，又名小尤，前半生执著于感情，命途多舛，故孑然一身。" />
-    <title>大生活 - 你我网 </title>
-    <link rel="stylesheet" rev="stylesheet" href="/css/style.css" type="text/css" media="screen" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <script src="/style/common.js" type="text/javascript"></script>
-    <script src="/style/c_html_js_add.js" type="text/javascript"></script>
-    <script src="/style/custom.js" type="text/javascript"></script>
-</head>
+@include('admin.comment.home_index')
 <body class="multi catalog">
 <div id="divAll">
     <div id="divPage">
@@ -22,9 +11,7 @@
                 <!-- <h3 id="BlogSubTitle">www.Youmew.com</h3> -->
             </div>
             <div id="divNavBar">
-                <ul>
-                    <li><a href="/admin/home/index">首页</a></li><li><a href="/admin/home/life" title="感悟生活点滴">大生活</a></li><li><a href="/admin/home/light" title="光与影的艺术">光影斑斓</a></li><li><a href="/admin/home/point" title="一切有为法，如梦幻泡影，如露亦如电，应作如是观。">如是观</a></li><li><a href="/admin/home/ring" target="_blank" title="还是以前的圈圈微博！">圈圈说</a></li><li><a href="/admin/home/guest" title="沟通从这里开始">留言本</a></li>
-                </ul>
+                @include('home.partials.menu')
             </div>
             <div id="divMain">
                 <div class="post multi-post cate2 auth1">
@@ -49,15 +36,25 @@
                     <h4 class="post-date">2015年11月21日</h4>
                     <h2 class="post-title"><a href="#post/74.html">初冬，景如故</a></h2>
                     <div class="post-body"><p>进入冬季，天很冷，时不时下点小雨，街上妖风阵阵，吹的人老想咳嗽，已经半个月没见阳光了。感觉自己就像对面楼顶的那棵树，每天随风摇摆，心无所住 ……<br/></p></div>
-                    <h5 class="post-tags">Tags: <span class="tags"><a href="#catalog.asp?tags=%E7%94%9F%E6%B4%BB">生活</a>&nbsp;&nbsp;<a href="#catalog.asp?tags=%E5%BF%83%E6%83%85">心情</a>&nbsp;&nbsp;<a href="#catalog.asp?tags=%E4%BA%BA%E7%94%9F">人生</a>&nbsp;&nbsp;<a href="#catalog.asp?tags=%E5%9B%9E%E5%BF%86">回忆</a>&nbsp;&nbsp;</span></h5>
+                    <h5 class="post-tags">Tags:
+                        <span class="tags">
+                            <a href="#catalog.asp?tags=%E7%94%9F%E6%B4%BB">生活</a>&nbsp;
+                            &nbsp;<a href="#catalog.asp?tags=%E5%BF%83%E6%83%85">心情</a>
+                            &nbsp;&nbsp;<a href="#catalog.asp?tags=%E4%BA%BA%E7%94%9F">人生</a>&nbsp;
+                            &nbsp;<a href="#catalog.asp?tags=%E5%9B%9E%E5%BF%86">回忆</a>&nbsp;
+                            &nbsp;</span>
+                    </h5>
                     <h6 class="post-footer">
                         发布:圈圈 | 分类:大生活 | 评论:13 | 浏览:<span id="spn74"></span>
                         <script type="text/javascript">LoadViewCount(74)</script> | <a href="#post/74.html">阅读全文 > </a>
                     </h6>
                 </div> <div class="post multi-post cate2 auth1">
                     <h4 class="post-date">2015年4月1日</h4>
-                    <h2 class="post-title"><a href="#post/71.html">见路不走，清明</a></h2>
-                    <div class="post-body"><p>
+                    <h2 class="post-title">
+                        <a href="#post/71.html">见路不走，清明</a>
+                    </h2>
+                    <div class="post-body">
+                        <p>
                             无论是面对厄运还是幸运都应该保持平常心，喜怒伤身，情绪伤神，执念误一生。医生笑着说这是他从医以来，见到的为数不多的案例，可谓是奇迹，而我的心却很平静，至此才真正领悟到了无为和不争。
                         </p>
                         <p style="text-indent: 0em;">
@@ -141,7 +138,7 @@
 
             </div>
             <div id="divBottom">
-                <h3 id="BlogCopyRight">陕ICP备11002139号-1</h3>
+                <h3 id="BlogCopyRight">　陕ICP备11002139号-1</h3>
                 <h4 id="BlogPowerBy">Powered By <a href="http://www.rainbowsoft.org/" title="RainbowSoft Studio Z-Blog" target="_blank">Z-Blog</a>　本站遵循<a rel="license" target="_blank" title="署名-非商业性使用-禁止演绎 3.0 中国大陆许可协议" href="http://creativecommons.org/licenses/by-nc-nd/3.0/cn/"> CC BY-NC-ND 3.0 CN协议 </a>。</h4>
             </div><div class="clear"></div>
         </div><div class="clear"></div>
@@ -161,4 +158,3 @@
 <!-- dd END -->
 </body>
 </html>
-<!--266ms-->

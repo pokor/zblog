@@ -8,7 +8,7 @@
     <div class="main-container">    <!-- START: Main Container -->
 
         <div class="page-header">
-            <h1>Editors <small>Lightweight WYSIWYG editor</small></h1>
+
             <ol class="breadcrumb">
                 <li><a href="admin">主页</a></li>
                 <li><a href="/admin/article/list">文章</a></li>
@@ -20,8 +20,9 @@
 
             <div class="row">
 
-                <form action="/admin/article/add" method="post">
+                <form action="/admin/article/add" method="post" role="form">
                     <div class="col-md-12">
+                        {{csrf_field()}}
                         <div class="panel panel-danger">
                             <div class="panel-heading">
                                 <div style="margin-left: 300px"><strong style="color: #000000"> 文章标题</strong>:<input type="text" style="width: 300px ;color: black" name="txt_title" ></div>
@@ -33,7 +34,7 @@
                             </div>
 
                             <div class="panel-footer">
-                                <button type="button" id="btn" class="btn btn-info">提交</button>
+                                <button type="submit" id="btn" class="btn btn-info">提交</button>
                                 <select name="option" id="opt" style="margin-left: 80px">
                                     <option value="0">情感</option>
                                     <option value="1">随想</option>
@@ -65,7 +66,6 @@
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
     var ue = UE.getEditor('container2');
-
     $(function () {
         $("#btn").click(function () {
             var val = ue.getContent();
