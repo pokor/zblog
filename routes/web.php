@@ -48,17 +48,19 @@ Route::group(['prefix'=>'/admin'],function (){
 /**
  * 前台
  */
-Route::get('/','Home\IndexController@indexHome')->name('home');
-Route::get('life','Home\ArticleController@homeArticle')->name('life');
-Route::get('light','Home\LightController@homeLight')->name('light');
-Route::get('point','Home\PointController@homePoint')->name('point');
-Route::get('ring','Home\RingController@homeRing')->name('ring');
-Route::get('guest','Home\GuestController@homeGuest')->name('comment');
+    Route::get('/','Home\IndexController@indexHome')->name('home');
+    Route::get('life','Home\ArticleController@homeArticle')->name('life');
+    Route::get('point','Home\PointController@homePoint')->name('point');
+    Route::get('guest','Home\GuestController@homeGuest')->name('comment');
+    Route::post('message','Home\GuestController@message')->name('message');
 
 
 
 
 //用户中心
 Route::group(['prefix'=>'user'],function (){
-       Route::get('/','User\ProfileController@index');
+       //建立游客登录路由
+        Route::get('/','User\ProfileController@index');
+        Route::post('login','User\ProfileController@post');
+
 });

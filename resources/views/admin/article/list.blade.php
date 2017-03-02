@@ -26,7 +26,6 @@
                                 <th>文章序号</th>
                                 <th>文章标题</th>
                                 <th>写作时间</th>
-                                <th>文章内容</th>
                                 <th>评论</th>
                                 <th>浏览人数</th>
                                 <th>操作</th>
@@ -35,15 +34,17 @@
                             <tbody>
                             <tr>
                                 @foreach($list2 as $k => $v)
-                                <th>{{$v->id}}</th>
-                                <th>{{$v->title}}</th>
-                                <th>{{date('Y-m-d',time($v->w_date))}}</th>
-                                <th>{{mb_substr($v->content,0,20)}} <a href="/admin/article/show?Sid={{$v->id}}">.......</a></th>
-                                <th>{{$v->comment}}</th>
-                                <th>{{$v->mun_read}}</th>
-                                <th>
+                                <td>{{$v->id}}</td>
+                                <td>
+                                    <a href="/admin/article/show?Sid={{$v->id}}">{{$v->title}}</a>
+                                </td>
+                                <td>{{date('Y-m-d',time($v->w_date))}}</td>
+
+                                <td>{{$v->comment}}</td>
+                                <td>{{$v->mun_read}}</td>
+                                <td>
                                     <a href="javascript:if (confirm('是否删除?')){location.href= '/admin/article/del?Aid={{$v->id}}'}">删除</a>
-                                </th>
+                                </td>
                             </tr>
                                 @endforeach
                             </tbody>

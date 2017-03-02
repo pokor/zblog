@@ -25,8 +25,7 @@ class ArticleAddController extends Controller
         $re = DB::insert($sql,[
             $title,
             $time,
-            htmlspecialchars($content),
-
+            htmlspecialchars($content)
         ]);
 
         if ($re)

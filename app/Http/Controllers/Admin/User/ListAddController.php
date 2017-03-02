@@ -45,8 +45,8 @@ class ListAddController extends Controller
           {
               return redirect('/admin/user/list');
           }else{
-              dd($rs);
-              //return redirect('/admin/user/add');
+
+             return redirect('/admin/user/add');
           }
 
   }

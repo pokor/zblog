@@ -41,7 +41,7 @@ class ArticleController extends Controller
         $res = DB::select($sql,[
             $show
         ]);
-        return view('admin.article.show',['list3'=>$res]);
+        return view('admin.article.show',['article'=>$res[0]]);
 
     }
 }
