@@ -20,29 +20,29 @@
 
             <div class="row">
 
-                <form action="/admin/article/add" method="post" role="form">
-                    <div class="col-md-12">
+                <form action="/admin/article/add" method="post" role="form" enctype="multipart/form-data">
+                    <div class="col-md-8 col-md-offset-2">
                         {{csrf_field()}}
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">
-                                <div style="margin-left: 300px"><strong style="color: #000000"> 文章标题</strong>:<input type="text" style="width: 300px ;color: black" name="txt_title" ></div>
-                            </div>
+                        <input type="hidden" name="text" id="txt">
+                        <div class="panel ">
+
                             <div class="panel-body">
+
+                                <div style="margin-bottom: 20px;">
+                                    <input type="text" class="form-control" name="txt_title"  placeholder="文章标题">
+                                </div>
+                                {{--上传图片--}}
+                                <div style="margin-bottom: 20px;">
+                                    <input type="file" name="txt_image" >
+                                </div>
+
+
                                 <!-- 加载编辑器的容器 -->
                                 <script id="container2" name="content" type="text/plain"></script>
-                                <input type="hidden" name="text" id="txt">
-                            </div>
 
-                            <div class="panel-footer">
-                                <button type="submit" id="btn" class="btn btn-info">提交</button>
-                                <select name="option" id="opt" style="margin-left: 80px">
-                                    <option value="0">情感</option>
-                                    <option value="1">随想</option>
-                                    <option value="2">故事</option>
-                                    <option value="3">风景</option>
-                                    <option value="4">新闻</option>
-                                    <option value="5">大家</option>
-                                </select>
+                                <div style="margin-top: 20px;">
+                                    <button type="submit" id="btn" class="btn btn-info ">提交</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,9 @@
 <script type="text/javascript" src="/plugins/ueditor/ueditor.all.js"></script>
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
-    var ue = UE.getEditor('container2');
+    var ue = UE.getEditor('container2',{
+        initialFrameHeight:'450'
+    });
     $(function () {
         $("#btn").click(function () {
             var val = ue.getContent();

@@ -7,24 +7,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ListController extends Controller
 {
     public function showList()
     {
-
         //检测是否登录
-        if (!session('user_info')){
+        if (!session('user_info')) {
             return redirect('/admin/login');
         }
         //拼接sql语句
-     /* $sql = "SELECT *
-                FROM zblog_user 
-                ORDER BY uid DESC 
-        ";*/
-        $rs = DB::table("zblog_user")->paginate(5);
+        $rs = DB::table("user")
+            ->orderBy("uid", 'desc')
+            ->paginate(10);
 
-        return view('admin.user.list',['lists'=>$rs]);
+        return view('admin.user.list', ['lists' => $rs]);
     }
 
     /**
@@ -34,19 +32,19 @@ class ListController extends Controller
     public function deleteUser(Request $request)
     {
         //获得删除用户编号
-       $id= $request ->input('uid');
+        $id = $request->input('uid');
         //组织删除语句
-        $sql = "DELETE FROM `zblog_user` WHERE `uid` = ? ";
+        $table = "zblog_user";
+        $sql = "DELETE FROM `{$table}` WHERE `uid` = ? ";
         //执行删除
-       DB::delete($sql,[
+        $result = DB::delete($sql, [
             $id
-       ]);
+        ]);
 
-       /* if (!$re ==0){
-            dd("删除成功");
-        }else{
-            dd("删除失败");
-        }*/
-        return redirect('/admin/user/list')->with('success','删除成功');
+        Log::info("删除结果:{$result}");
+
+        $msg = $result ? '删除成功' : '删除失败';
+
+        return redirect('/admin/user/list')->with('success', $msg);
     }
 }

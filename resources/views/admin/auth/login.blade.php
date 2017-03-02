@@ -40,7 +40,7 @@
             <div class="input-icon">
                 <input type="text" class="form-control" name="txt_username" placeholder="用户名">
             </div>
-            <span style="color: red">
+            <span style="color: red;margin-top: 10px;display: inline-block;">
                 @if(session('err'))
                     {{  session('err') }}
                 @endif
@@ -52,22 +52,13 @@
             </div>
         </div>
 
-        <div class="clearfix">
 
-            <div class="checkbox pull-left">
-                <div class="mk-trc" data-style="check">
-                    <input id="chkRemember" type="checkbox">
-                    <label for="chkRemember"> 记住密码</label>
-                </div>
-            </div>
-
-        </div>
 
         <div class="clearfix">
             <button type="submit" class="btn btn-primary pull-right">登录</button>
         </div>
 
-        <div class="clearfix mt-md">
+        <div class="clearfix mt-md" style="display: none">
             如果你没有帐号点击 <a href="javascript:;" class="lnkRegister">注册!</a>
         </div>
     </form>

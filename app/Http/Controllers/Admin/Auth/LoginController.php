@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -28,6 +27,7 @@ class LoginController extends Controller
     /**
      * 接收登录表单数据
      * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function postLogin(Request $request)
     {
@@ -37,8 +37,9 @@ class LoginController extends Controller
         $password = $request->input('txt_password');
 
         // 拼接select sql
+        $table = "zblog_user";
         $sql = "SELECT * 
-                FROM zblog_user 
+                FROM $table 
                 WHERE username = ? AND  password = ?";
         //执行查询
         $rs = DB::select($sql,[
@@ -63,16 +64,5 @@ class LoginController extends Controller
         //跳转到用户列表页面
         return redirect('/admin/user/list');
 
-    }
-
-    /**
-     * 退出
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function logout(Request $request)
-    {
-        $request->session()->flush();
-        return redirect('admin/login');
     }
 }

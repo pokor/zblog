@@ -12,9 +12,8 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::get('/login','Admin\Auth\LoginController@showLoginForm');
     //接受处理登录表单数据的
     Route::post('/login','Admin\Auth\LoginController@postLogin');
-
-    Route::get('/logout','Admin\Auth\LoginController@logout');
-    Route::post('/register','Admin\Auth\LoginController@postRegister');
+    //退出
+    Route::get('/logout','Admin\Auth\LogoutController@logout');
 
     //用户管理路由组
     Route::group(['prefix'=>'/user'],function (){
@@ -36,23 +35,15 @@ Route::group(['prefix'=>'/admin'],function (){
         Route::get('/del','Admin\Article\ArticleController@deleteArticle');
     });
 
-    //文章分类管理路由组
-    Route::group(['prefix'=>'/category'],function (){
-        Route::get('/list','Admin\Category\CategoryController@categoryList');
-        Route::get('/add','Admin\Category\CategoryAddController@categoryAdd');
-        Route::get('/del','Admin\Category\CategoryDeleteController@deleteCategory');
-    });
-
 });
 
 /**
  * 前台
  */
     Route::get('/','Home\IndexController@indexHome')->name('home');
-    Route::get('life','Home\ArticleController@homeArticle')->name('life');
-    Route::get('point','Home\PointController@homePoint')->name('point');
-    Route::get('guest','Home\GuestController@homeGuest')->name('comment');
-    Route::post('message','Home\GuestController@message')->name('message');
+    Route::get('/guest','Home\GuestController@homeGuest')->name('comment');
+    Route::post('/message','Home\GuestController@message')->name('message');
+    Route::get('/article/{id}','Home\ArticleController@info')->name('article');
 
 
 

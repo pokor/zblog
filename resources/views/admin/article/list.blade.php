@@ -7,17 +7,20 @@
     @include('admin.comment.aside')
 
  <div class="main-container">
-
+     <div class="page-header">
+         <h1>文章管理</h1>
+         <ol class="breadcrumb">
+             <li><a href="/admin/article/list">文章</a></li>
+             <li class="active">所有文章</li>
+         </ol>
+     </div>
     <div class="content-wrap">  <!--START: Content Wrap-->
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">面板标题</h3>
-                        <div class="tools">
-                            <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
-                            <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>
-                        </div>
+
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered table-dataTable">
@@ -33,16 +36,17 @@
                             </thead>
                             <tbody>
                             <tr>
-                                @foreach($list2 as $k => $v)
+                                @foreach($articles as $k => $v)
                                 <td>{{$v->id}}</td>
                                 <td>
                                     <a href="/admin/article/show?Sid={{$v->id}}">{{$v->title}}</a>
                                 </td>
-                                <td>{{date('Y-m-d',time($v->w_date))}}</td>
+                                <td>{{date('Y-m-d H:i:s',$v->w_date)}}</td>
 
                                 <td>{{$v->comment}}</td>
                                 <td>{{$v->mun_read}}</td>
                                 <td>
+                                    <a href="#">编辑</a>
                                     <a href="javascript:if (confirm('是否删除?')){location.href= '/admin/article/del?Aid={{$v->id}}'}">删除</a>
                                 </td>
                             </tr>
@@ -50,6 +54,11 @@
                             </tbody>
                         </table>
                     </div>
+                    @if($articles->count()>10)
+                        <div class="panel-footer">
+                            {{ $articles->links() }}
+                        </div>
+                    @endif
                 </div>
             </div>
 

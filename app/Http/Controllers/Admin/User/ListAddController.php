@@ -13,42 +13,77 @@ use Illuminate\Support\Facades\Session;
 class ListAddController extends Controller
 {
 
-  public function listAddUser()
-  {
-      //检测是否登录
-      if (!session('user_info')){
-          return redirect('/admin/login');
-      }
+    public function listAddUser(Request $request)
+    {
+        //检测是否登录
+        if (!session('user_info')) {
+            return redirect('/admin/login');
+        }
 
-      return view('admin.user.add');
-  }
-  public function postAddUser(Request $request){
-      $username = $request->input('reg_username');
-      $password = $request->input('txtPassword');
-      //$confirm = $request->input('txtCPassword');
+        $id = $request->input('uid');
 
-      $time = time();
-      $uip = $request->ip();
-      //dd($uip);
+        $user = DB::table("user")->where("uid", '=', $id)->first();
 
-          $sql = "insert into `zblog_user` (`username`,`password`,`reg_time`, `reg_ip`) ";
-          $sql.= "value (?,?,?,?)";
-      //dd($sql);
-          $rs = DB::insert($sql,[
-              $username,
-              md5($password),
-              $time,
-              $uip
-          ]);
+        $assigns = [];
 
-          if ($rs)
-          {
-              return redirect('/admin/user/list');
-          }else{
+        $assigns ['user'] = $user;
 
-             return redirect('/admin/user/add');
-          }
+        return view('admin.user.add', $assigns);
+    }
 
-  }
+
+    public function postAddUser(Request $request)
+    {
+        if ($request->has('uid') && (int)$request->input('uid') > 0) {
+
+            return $this->editUser($request);
+
+        } else {
+
+            return $this->createUser($request);
+
+        }
+
+    }
+
+    private function editUser(Request $request)
+    {
+        $uid = $request->input('uid');
+        $username = $request->input('reg_username');
+        $password = $request->input('txtPassword');
+
+        $updateData = [];
+        $updateData['username'] = $username;
+        $updateData['password'] = md5($password);
+
+        DB::table("user")->where("uid", '=', $uid)->update($updateData);
+
+        return redirect('admin/user/list');
+    }
+
+    private function createUser(Request $request)
+    {
+        $username = $request->input('reg_username');
+        $password = $request->input('txtPassword');
+
+        $time = time();
+        $uip = $request->ip();
+
+        $sql = "insert into `zblog_user` (`username`,`password`,`reg_time`, `reg_ip`) ";
+        $sql .= "value (?,?,?,?)";
+        //dd($sql);
+        $rs = DB::insert($sql, [
+            $username,
+            md5($password),
+            $time,
+            $uip
+        ]);
+
+        if ($rs) {
+            return redirect('/admin/user/list');
+        } else {
+            return redirect('/admin/user/add');
+        }
+    }
 
 }

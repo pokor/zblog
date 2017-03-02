@@ -7,10 +7,9 @@
 @include('admin.comment.header')
     <div class="main-container">    <!-- START: Main Container -->
         <div class="page-header">
-            <h1>用户管理 <small>所有用户</small></h1>
+            <h1>用户管理</h1>
             <ol class="breadcrumb">
-                <li><a href="/admin">首页</a></li>
-                <li><a href="/admin/user/list">用户管理</a></li>
+                <li><a href="/admin/user/list">用户</a></li>
                 <li class="active">所有用户 </li>
             </ol>
         </div>
@@ -42,6 +41,7 @@
                                     <td>{{  date('Y-m-d H:i:s'), $v->reg_time }}</td>
                                     <td>{{  $v->reg_ip }}</td>
                                     <td>
+                                        <a href="{{ url('admin/user/add?uid='.$v->uid) }}">编辑</a>
                                         <a href="javascript:if (confirm('是否删除?')){location.href= '/admin/user/del?uid={{$v->uid}}'}">删除</a>
                                     </td>
                                 </tr>
