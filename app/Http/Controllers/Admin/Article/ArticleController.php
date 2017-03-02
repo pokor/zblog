@@ -42,6 +42,5 @@ class ArticleController extends Controller
             $show
         ]);
         return view('admin.article.show',['article'=>$res[0]]);
-
     }
 }
