@@ -1,4 +1,5 @@
 <head>
+    {{--header--}}
     <meta charset="utf-8">
     <title>后台管理</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -9,12 +10,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript" src="/plugins/lib/modernizr.js"></script>
-    <link rel="icon" href="/images/favicon.png" type="image/gif">
-
     <link rel="stylesheet" type="text/css" href="/plugins/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/plugins/validationEngine/validationEngine.jquery.css">
     <script type="text/javascript" src="/plugins/lib/jquery-2.2.4.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/style-default.css">
 </head>

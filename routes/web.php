@@ -14,6 +14,10 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::post('/login','Admin\Auth\LoginController@postLogin');
     //退出
     Route::get('/logout','Admin\Auth\LogoutController@logout');
+    //评论显示路由
+    Route::get('/comment','Admin\Comment\CommentController@commentList');
+    Route::get('/comment/del','Admin\Comment\CommentController@delComment');
+
 
     //用户管理路由组
     Route::group(['prefix'=>'/user'],function (){

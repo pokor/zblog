@@ -23,7 +23,6 @@ class LoginController extends Controller
         return view('admin.auth.login');
     }
 
-
     /**
      * 接收登录表单数据
      * @param Request $request

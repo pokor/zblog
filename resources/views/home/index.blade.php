@@ -12,7 +12,7 @@
                 </h1>
                 <!-- <h3 id="BlogSubTitle">www.Youmew.com</h3> -->
             </div>
-            <div id="divNavBar">
+            <div id="divNavBar" style="margin-top: 25px">
                 @include('home.partials.menu')
             </div>
             <div id="divMain">
@@ -46,9 +46,6 @@
                 </div>
             </div>
             <div id="divSidebar">
-
-                <a href="/user" style="margin-left: 200px;border-bottom: 20px">登录</a>
-
                 <dl class="function" id="divComments">
                     <dt class="function_t">最新留言</dt>
                     <dd class="function_c">
@@ -112,11 +109,7 @@
                                     with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
                                 <!-- Baidu Button END -->
                             </li>
-                            <li>
-                                <a href="#feed.asp" target="_blank">
-                                    <img src="/images/rss.png" height="31" width="88" border="0"
-                                         alt="订阅本站的 RSS 2.0 新闻聚合"/></a>
-                            </li>
+
                         </ul>
                     </dd>
                 </dl>

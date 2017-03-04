@@ -51,9 +51,6 @@
                     <h6 class="post-footer"></h6>
                 </div>
             </div>
-            <div id="divSidebar">
-                <a href="/user" style="margin-left: 200px">登录</a>
-            </div>
             <div id="divBottom">
                 <h3 id="BlogCopyRight">鄂ICP备11002139号-1</h3>
                 <h4 id="BlogPowerBy">Powered By <a href="http://www.rainbowsoft.org/" title="RainbowSoft Studio Z-Blog" target="_blank">Z-Blog</a>　本站遵循<a rel="license" target="_blank" title="署名-非商业性使用-禁止演绎 3.0 中国大陆许可协议" href="http://creativecommons.org/licenses/by-nc-nd/3.0/cn/"> CC BY-NC-ND 3.0 CN协议 </a>。</h4>

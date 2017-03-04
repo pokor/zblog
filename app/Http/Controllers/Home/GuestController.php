@@ -10,24 +10,28 @@ use Illuminate\Support\Facades\DB;
 
 class GuestController extends Controller
 {
-    public function homeGuest(Request $request)
+    public function homeGuest()
     {
-
-        return view('home.guest');
+        $zblog = "message";
+        $assigns = [];
+        $assigns['guest'] = DB::table($zblog)->orderby('vid','desc')->paginate(10);
+        return view('home.guest',$assigns);
     }
   public function message(Request $request)
     {
         $guest = $request->input('text');
         $id = $request->ip();
         $time = time();
-        $sql = "insert into `message`(`Vname`,`message`,`Vtime`) VALUE (?,?,?)";
+        $mess = 'zblog_message';
+        $sql = "insert into $mess (`name`,`message`,`time`) VALUE (?,?,?)";
         $re = DB::insert($sql,[
             $id,
             htmlspecialchars($guest),
             $time
         ]);
-
-        return redirect('/home/index',['$user'=>$re]);
+        if ($re){
+            return redirect('/guest');
+        }
     }
 
 }

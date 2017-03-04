@@ -14,25 +14,25 @@
             </li>
 --}}
             <li class="has-submenu">
-                <a href="#submenuOne" data-toggle="collapse" aria-expanded="false">
+                <a href="#submenuArticle" data-toggle="collapse" aria-expanded="false">
                     <i class="fs-grid-6"></i>
                     <span class="nav-text">文章</span>
                 </a>
-                <div class="sub-menu collapse secondary" id="submenuOne">
+                <div class="sub-menu collapse secondary" id="submenuArticle">
                     <ul>
                         <li><a href="/admin/article/list">所有文章</a></li>
                         <li><a href="/admin/article/add">写文章</a></li>
-                        <li><a href="/admin/category/list">分类目录</a></li>
+                       {{-- <li><a href="/admin/category/list">分类目录</a></li>--}}
                     </ul>
                 </div>
             </li>
 
             <li class="has-submenu">
-                <a href="#submenuFour" data-toggle="collapse" aria-expanded="false">
+                <a href="#submenuUser" data-toggle="collapse" aria-expanded="false">
                     <i class="sli-docs"></i>
                     <span class="nav-text">用户</span>
                 </a>
-                <div class="sub-menu collapse secondary" id="submenuFour">
+                <div class="sub-menu collapse secondary" id="submenuUser">
                     <ul>
                         <li><a href="/admin/user/list">所有用户</a></li>
                         <li><a href="/admin/user/add">添加用户</a></li>
@@ -40,13 +40,20 @@
                 </div>
             </li>
 
+
             <li class="has-submenu">
-                <a href="#submenuFive" data-toggle="collapse" aria-expanded="false">
-                    <i class="sli-map"></i>
+                <a href="#submenuComment" data-toggle="collapse" aria-expanded="false">
+                    <i class="sli-docs"></i>
                     <span class="nav-text">评论</span>
                 </a>
-
+                <div class="sub-menu collapse secondary" id="submenuComment">
+                    <ul>
+                        <li><a href="/admin/comment">所有评论</a></li>
+                    </ul>
+                </div>
             </li>
+
+
 
 
             <li class="milestone">

@@ -29,7 +29,6 @@
                                 <th>文章序号</th>
                                 <th>文章标题</th>
                                 <th>写作时间</th>
-                                <th>评论</th>
                                 <th>浏览人数</th>
                                 <th>操作</th>
                             </tr>
@@ -43,7 +42,7 @@
                                 </td>
                                 <td>{{date('Y-m-d H:i:s',$v->w_date)}}</td>
 
-                                <td>{{$v->comment}}</td>
+
                                 <td>{{$v->mun_read}}</td>
                                 <td>
                                     <a href="#">编辑</a>
@@ -54,7 +53,7 @@
                             </tbody>
                         </table>
                     </div>
-                    @if($articles->count()>10)
+                    @if($articles->total()>10)
                         <div class="panel-footer">
                             {{ $articles->links() }}
                         </div>
