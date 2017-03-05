@@ -39,7 +39,6 @@
 
                                   @if($guest->total()>10)
                                       {{$guest->links()}}
-
                                   @endif
                           </ul>
                       </dd>
