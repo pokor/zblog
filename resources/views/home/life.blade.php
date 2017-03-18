@@ -19,13 +19,10 @@
             </div>
             <div id="divMain">
                 <div class="post single-post cate2 auth1">
-                    <div class="post-nav"><a class="l" href="#post/74.html" title="初冬，景如故">« 上一篇</a><a class="r" href="#post/76.html" title="人生何尝不是一场赌局">下一篇 »</a></div>
-                    <h4 class="post-date">2017-3-2 13:52:59</h4>
+                    <h4 class="post-date">2017-3-2</h4>
                     <h2 class="post-title">2016年就一个字：戒！​</h2>
                     <div class="post-body"><p>太阳晒的人懒洋洋的，这段时间的汉中也和其它地方一样，迎来了冬季最冷的天气，零下7度左右，家里的水管都冻爆了。</p><p>很快过春节了，我们公司也和本地其它小公司一样，员工都在等待着放假和年终奖，完全不在工和状态。其实大家都没盼望着过年，这意味着在没有明确的计划之前，过完年又得重复这种百无聊赖的工作和生活，每个人都憋足了劲，又不知向何处使。</p><p>这个时候很多人都在写工作总结，什么A总结，B计划之类的，其实真没什么意义，我就不写了。这一年对我个人而言还算不错，变化挺大，也有惊喜，2016年就一个字：<strong>戒！</strong></p><p style="text-indent: 0em;"><img src="#zb_users/upload/2016/2/2016021074509417.jpg" title="你我网" alt="你我网"/></p><p>这条路小时候走了无数次，将来还会更多……</p><p><br/></p><p><br/></p></div>
                     <h6 class="post-footer">
-                         浏览:<span id="spn75"></span>
-                        <script type="text/javascript">AddViewCount(75)</script>
                         <br />
                         <!-- AD BEGIN -->
                         <br />
@@ -35,7 +32,7 @@
                         <!-- AD END -->
                     </h6>
                 </div>
-                @foreach($listLife as $k=>$v)
+                @foreach($articles as $k=>$v)
                 <div class="post single-post cate2 auth1">
 {{--
                     <div class="post-nav"><a class="l" href="#post/74.html" title="初冬，景如故">« 上一篇</a><a class="r" href="#post/76.html" title="人生何尝不是一场赌局">下一篇 »</a></div>
@@ -43,11 +40,11 @@
                     <h4 class="post-date">{{date('Y-m-d',time($v->w_date))}}</h4>
                     <h2 class="post-title">{{$v->title}}​</h2>
                     <div class="post-body">
-                        <p>{{$v->content}}</p>
+                        <p>{!! htmlspecialchars_decode($v->content) !!}</p>
                     </div>
                     <h6 class="post-footer">
-                         | 浏览:<span id="spn75"></span>
-                        <script type="text/javascript">AddViewCount(75)</script>
+                        {{-- | 浏览:<span id="spn75"></span>
+                        <script type="text/javascript">AddViewCount(75)</script>--}}
                         <br />
                         <!-- AD BEGIN -->
                         <br />
@@ -58,7 +55,7 @@
                     </h6>
                 </div>
                 @endforeach
-                {{$listLife->links()}}
+                {{$articles->links()}}
                 <ul  class="msg msghead">
                     <li class="tbname">留言列表:</li>
                 </ul>

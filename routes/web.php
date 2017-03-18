@@ -47,6 +47,8 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::get('/','Home\IndexController@indexHome')->name('home');
     Route::get('/guest','Home\GuestController@homeGuest')->name('comment');
     Route::post('/message','Home\GuestController@message')->name('message');
+    Route::get('/life','Home\LifeController@showLife')->name('life');
+    Route::post('/message','Home\GuestController@message')->name('message');
     Route::get('/article/{id}','Home\ArticleController@info')->name('article');
 
 

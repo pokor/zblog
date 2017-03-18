@@ -10,39 +10,43 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $username = $request->input('username');
+        return view('user.visitor');
+    }
+    public function post(Request $request)
+    {
+        $name = $request->input('username');
         $pass = $request->input('password');
+        //dd($pass);
 
         //dd($username);
-        $sql = "select * from `zblog_user` WHERE username = ? AND password = ?";
-        $rs = DB::select($sql,[
-            $username,
-            md5($pass)
-        ]);
-        dd($username);
-        /*$user_info = [
-            'Uname'    =>   $rs[0]->Vname,
-            'Umessage' =>   $rs[0]->message,
-            'Utime'    =>   $rs[0]->Vtime,
 
+        $visitor = [];
+        $vName = "zblog_visitor";
+        $sql = "select * from $vName WHERE `visi_name` = ? AND `visi_paswd` = ?";
+        //dd($sql);
+        $rs = DB::select($sql,[
+            $name,
+            $pass
+        ]);
+        if (!$rs){
+
+            return redirect('/home/index')->with('fail','登录失败哦');
+        }
+
+        /*$user_info = [
+            'vName'    =>   $rs[0]->visi_name,
         ];
         //存入session
         session([
             'user_info'=>$user_info
         ]);*/
 
-        if (!$rs){
 
-            return redirect('/home/index');
-        }
         return redirect('/user/visitor');
-    }
-    public function post(Request $request)
-    {
-        $username = $request->input('text');
-        dd(555);
+       /* $username = $request->input('text');
+        dd(555);*/
 
     }
 }
